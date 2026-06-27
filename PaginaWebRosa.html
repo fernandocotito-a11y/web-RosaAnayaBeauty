@@ -1,0 +1,1281 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rosa Anaya Rivera - Beauty Studio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Montserrat:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* Paleta de Colores de Lujo (Nude Neutro, Beige Mineral, Negro y Blanco Pureza) */
+        :root {
+            --bg-nude: #f2e0d3;
+            --bg-light: #faf7f4;
+            --text-dark: #111111;
+            --text-muted: #5a5551;
+            --white: #ffffff;
+            --accent: #c49a7a;
+            --accent-dark: #a67c5c;
+            --border-color: #eae3db;
+        }
+
+        /* Estilos Base Estrictos */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.65;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, .brand-title {
+            font-family: 'Cinzel', serif;
+            letter-spacing: 2px;
+            font-weight: 500;
+        }
+
+        .container {
+            width: 92%;
+            max-width: 1240px;
+            margin: 0 auto;
+            padding: 80px 0;
+        }
+
+        .text-center { text-align: center; }
+        
+        .section-title {
+            font-size: 2.3rem;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+        }
+        
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 1.5px;
+            background-color: var(--text-dark);
+            margin: 15px auto 0;
+        }
+
+        .subtitle {
+            font-size: 1rem;
+            color: var(--text-muted);
+            margin-bottom: 50px;
+            font-style: italic;
+            letter-spacing: 1px;
+        }
+
+        /* Cabecera / Navegación */
+        header {
+            background-color: rgba(255, 255, 255, 0.96);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--border-color);
+            backdrop-filter: blur(5px);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 4%;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: var(--text-dark);
+        }
+
+        .logo-area img {
+            height: 65px;
+            width: auto;
+            display: block;
+            filter: brightness(1.2) sepia(0.6) hue-rotate(340deg) saturate(0.8);
+        }
+
+        .logo-text h1 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            letter-spacing: 3px;
+            line-height: 1.2;
+        }
+
+        .logo-text span {
+            font-size: 0.6rem;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            color: var(--text-muted);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li { margin-left: 25px; }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-size: 0.8rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover { color: var(--accent); }
+
+        /* Banner Principal - Hero */
+        .hero {
+            background: linear-gradient(rgba(242, 224, 211, 0.45), rgba(250, 247, 244, 1)), 
+                        url('https://images.unsplash.com/photo-1560066984-138dadb4c035?q=80&w=1974&auto=format&fit=crop') no-repeat center center/cover;
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        .hero-logo {
+            max-width: 380px;
+            height: auto;
+            margin-bottom: 5px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            animation: heroLogoAnim 1.4s ease forwards;
+        }
+
+        @keyframes heroLogoAnim {
+            0% { opacity: 0; transform: scale(0.7) translateY(30px); }
+            100% { opacity: 1; transform: scale(1) translateY(0); }
+        }
+
+        .hero-content h2 {
+            font-size: 2.6rem;
+            margin-bottom: 15px;
+            font-weight: 300;
+            text-transform: uppercase;
+            letter-spacing: 6px;
+            animation: heroFadeUp 1s ease 0.3s both;
+        }
+
+        .hero-content p {
+            font-size: 1.1rem;
+            margin-bottom: 35px;
+            letter-spacing: 2px;
+            color: var(--text-muted);
+            font-weight: 300;
+            animation: heroFadeUp 1s ease 0.6s both;
+        }
+
+        @keyframes heroFadeUp {
+            0% { opacity: 0; transform: translateY(30px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Botón Premium */
+        .hero-content .btn {
+            animation: heroFadeUp 1s ease 0.9s both;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 40px;
+            background-color: var(--text-dark);
+            color: var(--white);
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            transition: all 0.3s ease;
+            border: 1px solid var(--text-dark);
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: transparent;
+            color: var(--text-dark);
+        }
+
+        /* Bloque Quiénes Somos e Historia */
+        .about { background-color: var(--white); }
+        
+        .about-layout {
+            display: flex;
+            gap: 60px;
+            margin-top: 30px;
+            align-items: flex-start;
+        }
+
+        .about-col {
+            flex: 1;
+            width: 50%;
+            padding: 0 20px;
+        }
+
+        .about-text p {
+            margin-bottom: 25px;
+            margin-right: 15px;
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            text-align: justify;
+        }
+
+        .inspiration-card {
+            background-color: var(--bg-light);
+            padding: 35px;
+            border-left: 2px solid var(--accent);
+            margin-left: 20px
+        }
+
+        .inspiration-item { margin-bottom: 25px; }
+        .inspiration-item:last-child { margin-bottom: 0; }
+        
+        .inspiration-item h4 {
+            font-size: 1rem;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+        
+        .inspiration-item p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+
+        /* Grilla Estructurada de Servicios */
+        .services-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .services-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .service-category {
+            background-color: var(--white);
+            padding: 30px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.01);
+        }
+
+        .service-category h3 {
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 12px;
+            color: var(--text-dark);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 16px;
+            font-size: 0.9rem;
+            border-bottom: 1px dashed #f0e9e2;
+            padding-bottom: 6px;
+        }
+
+        .menu-item:last-child {
+            margin-bottom: 0;
+            border-bottom: none;
+        }
+
+        .item-name {
+            font-weight: 400;
+            color: var(--text-dark);
+            padding-right: 10px;
+        }
+
+        .item-name span {
+            display: block;
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            font-style: italic;
+            margin-top: 2px;
+            line-height: 1.3;
+        }
+
+        .item-price {
+            font-weight: 600;
+            white-space: nowrap;
+            color: var(--text-dark);
+        }
+
+        /* Bloque de Ciencia Capilar */
+        .science-section { background-color: var(--white); }
+        
+        .science-intro {
+            max-width: 800px;
+            margin: 0 auto 50px;
+            text-align: center;
+            font-size: 1.05rem;
+            color: var(--text-muted);
+        }
+
+        .science-group-title {
+            font-size: 1.3rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin: 40px 0 20px;
+            color: var(--accent-dark);
+            border-left: 3px solid var(--accent);
+            padding-left: 15px;
+        }
+
+        .science-box-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .science-box-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .science-card {
+            background-color: var(--bg-light);
+            padding: 30px;
+            border-top: 3px solid var(--text-dark);
+        }
+
+        .science-card h4 {
+            font-size: 1.1rem;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+        }
+
+        .science-card p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 12px;
+            text-align: justify;
+        }
+        
+        .science-card p strong {
+            color: var(--text-dark);
+        }
+
+        .science-tag {
+            display: inline-block;
+            background-color: var(--bg-nude);
+            font-size: 0.75rem;
+            padding: 2px 10px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* Sección Galería */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+        }
+        
+        .gallery-row {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            width: 100%;
+        }
+        
+        .gallery-item {
+            background-color: #ddd;
+            aspect-ratio: 1 / 1;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(17,17,17,0.75);
+            color: var(--white);
+            padding: 12px;
+            font-size: 0.8rem;
+            text-align: center;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* Sección de Reseñas / Testimonios */
+        .reviews-section { background-color: var(--white); }
+        
+        .reviews-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 25px;
+        }
+
+        .reviews-row {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            width: 100%;
+        }
+
+        .review-card {
+            background-color: var(--bg-light);
+            padding: 35px;
+            border-radius: 4px;
+        }
+
+        .stars { color: #d4af37; margin-bottom: 15px; font-size: 0.9rem; }
+        .review-card p { font-style: italic; font-size: 0.95rem; color: var(--text-muted); }
+        .review-author { margin-top: 20px; font-weight: 600; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px;}
+
+        /* E-commerce / Tienda Virtual */
+        .shop-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .shop-row {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+            width: 100%;
+        }
+
+        .product-card {
+            background-color: var(--white);
+            padding: 30px;
+            text-align: center;
+            border: 1px solid var(--border-color);
+        }
+
+        .product-icon {
+            font-size: 2.5rem;
+            color: var(--accent);
+            margin-bottom: 20px;
+            min-height: 140px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .product-icon img {
+            max-width: 100%;
+            max-height: 140px;
+            height: auto;
+            object-fit: contain;
+            display: block;
+        }
+
+        .product-pack-grid {
+            display: flex;
+            gap: 6px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .product-pack-grid img {
+            width: 31%;
+            max-width: 80px;
+            height: auto;
+            object-fit: contain;
+        }
+
+        .product-card h4 {
+            font-size: 0.95rem;
+            margin-bottom: 6px;
+            font-weight: 600;
+            height: 45px;
+            overflow: hidden;
+        }
+
+        .product-line {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+
+        .product-desc {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 15px;
+        }
+
+        .product-price {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--text-dark);
+        }
+
+        /* Formulario Interactivo */
+        .booking-box {
+            max-width: 650px;
+            margin: 0 auto;
+            background-color: var(--white);
+            padding: 50px;
+            border: 1px solid var(--border-color);
+        }
+
+        .form-group { margin-bottom: 22px; }
+        .form-group label { display: block; margin-bottom: 8px; font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
+        
+        .form-control {
+            width: 100%;
+            padding: 14px;
+            border: 1px solid #dcd5cc;
+            background-color: var(--bg-light);
+            font-family: inherit;
+            font-size: 0.9rem;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .form-control:focus { border-color: var(--text-dark); background-color: var(--white); }
+
+        /* Pie de Página - Footer Completo */
+        footer {
+            background-color: var(--text-dark);
+            color: var(--white);
+            padding: 80px 0 30px;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .footer-col {
+            flex: 1;
+            vertical-align: top;
+            padding: 0;
+            text-align: left;
+            min-width: 200px;
+        }
+
+        .footer-col h4 {
+            font-size: 1rem;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border-bottom: 1px solid #2e2a27;
+            padding-bottom: 12px;
+            color: var(--bg-nude);
+        }
+
+        .footer-col p, .footer-col a {
+            color: #b5b0aa;
+            font-size: 0.9rem;
+            text-decoration: none;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .footer-col a:hover { color: var(--white); }
+        
+        .footer-col i {
+            margin-right: 8px;
+            color: var(--accent);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            border-top: 1px solid #2e2a27;
+            padding-top: 30px;
+            margin-top: 50px;
+            font-size: 0.78rem;
+            color: #6e6862;
+            letter-spacing: 1px;
+        }
+
+        /* Adaptación Básica para Móviles */
+        /* Animaciones de entrada */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        section[id] {
+            scroll-margin-top: 80px;
+        }
+
+        body {
+            animation: fadeIn 0.8s ease;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (max-width: 1024px) {
+            .hero-logo { max-width: 300px; }
+            .hero-content h2 { font-size: 2.4rem; }
+        }
+
+        @media (max-width: 850px) {
+            .nav-container { flex-direction: column; gap: 20px; }
+            .logo-area img { height: 45px; }
+            nav ul { flex-wrap: wrap; justify-content: center; }
+            nav ul li { margin: 5px 12px; }
+            .about-layout { flex-direction: column; }
+            .about-col { width: 100% !important; margin-bottom: 25px !important; }
+            .services-row, .science-box-row {
+                grid-template-columns: 1fr !important;
+            }
+            .gallery-grid, .reviews-row, .shop-row {
+                display: flex !important;
+                overflow-x: auto !important;
+                -webkit-overflow-scrolling: touch;
+                scroll-snap-type: x mandatory;
+                gap: 15px;
+                padding-bottom: 20px;
+                width: auto !important;    
+            }
+            .gallery-grid::-webkit-scrollbar,
+            .reviews-container::-webkit-scrollbar,
+            .shop-container::-webkit-scrollbar {
+                display: none;
+            }
+            .gallery-item, .review-card, .product-card {
+                flex: 0 0 75% !important;
+                scroll-snap-align: start;
+            }
+            .hero { min-height: 85vh; padding: 80px 20px; }
+            .hero-logo { max-width: 220px; }
+            .hero-content h2 { font-size: 2rem; letter-spacing: 4px; }
+            .hero-content p { font-size: 1rem; }
+            .section-title { font-size: 1.8rem; }
+            .container { padding: 50px 0; }
+        }
+
+        @media (max-width: 480px) {
+            .hero { min-height: 80vh; padding: 60px 15px; }
+            .hero-logo { max-width: 160px; }
+            .hero-content h2 { font-size: 1.5rem; letter-spacing: 2px; }
+            .hero-content p { font-size: 0.85rem; }
+            .btn { padding: 12px 28px; font-size: 0.75rem; }
+            .logo-area img { height: 38px; }
+            .logo-text h1 { font-size: 1rem; }
+            .logo-text span { font-size: 0.5rem; letter-spacing: 3px; }
+            .section-title { font-size: 1.4rem; }
+            .subtitle { font-size: 0.85rem; }
+            .container { padding: 35px 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <a href="#inicio" class="logo-area">
+                <img src="Logo/Logo Rosa 2.png" alt="Rosa Anaya Rivera">
+                <div class="logo-text">
+                    <h1>ROSA ANAYA RIVERA</h1>
+                    <span>BEAUTY STUDIO</span>
+                </div>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#nosotros">Nosotros</a></li>
+                    <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="#ciencia">Ciencia Capilar</a></li>
+                    <li><a href="#galeria">Portafolio</a></li>
+                    <li><a href="#productos">Tienda</a></li>
+                    <li><a href="#reservar">Citas</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="inicio" class="hero reveal">
+        <div class="hero-content">
+            <img src="Logo/Logo Rosa 2.png" alt="Rosa Anaya Rivera" class="hero-logo">
+            <h2>Crea una nueva versión de ti</h2>
+            <p>Alta gama, asesoría profesional y cuidado integral en Puente Piedra</p>
+            <a href="#reservar" class="btn">Agendar Cita</a>
+        </div>
+    </section>
+
+    <section id="nosotros" class="about reveal">
+        <div class="container">
+            <h2 class="section-title text-center">Quiénes Somos</h2>
+            <p class="subtitle text-center">Amor por lo que hacemos reflejado en cada detalle</p>
+            
+            <div class="about-layout">
+                <div class="about-col about-text">
+                    <p>Fundado en agosto de 2024, nuestro estudio nació de una profunda pasión por la belleza y una admiración genuina por la figura femenina. Nos inspira el arte de transformar y el poder de una mirada, un cabello o unas manos cuidadas.</p>
+                    <p>En <strong>STUDIO ROSAANAYA BEAUTY</strong> no solo ofrecemos servicios de alta gama; estamos aquí para diseñar la experiencia que te ayude a descubrir y celebrar tu nueva versión. El amor por lo que hacemos se nota en cada detalle.</p>
+                </div>
+                <div class="about-col">
+                    <div class="inspiration-card">
+                        <div class="inspiration-item">
+                            <h4><i class="fa-solid fa-wand-magic-sparkles"></i> Nuestra Inspiración</h4>
+                            <p>El amor incondicional por el mundo de la cosmética, el estilismo y el cuidado integral.</p>
+                        </div>
+                        <div class="inspiration-item">
+                            <h4><i class="fa-solid fa-gem"></i> Nuestra Pasión</h4>
+                            <p>Resaltar la belleza natural y la elegancia de la figura femenina a través de técnicas de vanguardia.</p>
+                        </div>
+                        <div class="inspiration-item">
+                            <h4><i class="fa-solid fa-heart"></i> Nuestro Propósito</h4>
+                            <p>Brindarte las herramientas, el mimo y la asesoría profesional necesarios para sacar tu mejor versión.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="servicios" class="container reveal">
+        <h2 class="section-title text-center">Nuestros Servicios</h2>
+        <p class="subtitle text-center">Tarifario oficial completo y especialidades profesionales</p>
+        <p style="text-align:center; font-size:0.8rem; color:var(--text-muted); margin-top:-30px; margin-bottom:40px;"><i class="fa-solid fa-info-circle"></i> Precios referenciales sujetos a cambio sin previo aviso</p>
+
+        <div class="services-wrapper">
+            <div class="services-row">
+                <div class="service-category">
+                    <h3>1. Cabello & Colorimetría</h3>
+                    <div class="menu-item"><span class="item-name">Color Global</span><span class="item-price">S/. 80</span></div>
+                    <div class="menu-item"><span class="item-name">Mechas</span><span class="item-price">S/. 280</span></div>
+                    <div class="menu-item"><span class="item-name">Iluminación</span><span class="item-price">S/. 200</span></div>
+                    <div class="menu-item"><span class="item-name">Balayage</span><span class="item-price">S/. 300</span></div>
+                    <div class="menu-item"><span class="item-name">Morena Iluminada</span><span class="item-price">S/. 200</span></div>
+                    <div class="menu-item"><span class="item-name">Cobertura de Canas</span><span class="item-price">S/. 80</span></div>
+                    <div class="menu-item"><span class="item-name">Baño de Color</span><span class="item-price">S/. 80</span></div>
+                </div>
+
+                <div class="service-category">
+                    <h3>2. Cortes & Peinados (Styling)</h3>
+                    <div class="menu-item"><span class="item-name">Corte de Cabello</span><span class="item-price">S/. 20</span></div>
+                    <div class="menu-item"><span class="item-name">Planchado Simple</span><span class="item-price">S/. 20</span></div>
+                    <div class="menu-item">
+                        <span class="item-name">Planchado Premium <span>Incluye: Lavado, mascarilla, ampolla de brillo y cepillado</span></span>
+                        <span class="item-price">S/. 50</span>
+                    </div>
+                    <div class="menu-item"><span class="item-name">Peinado Profesional: Recogidos (Updos)</span><span class="item-price">S/. 50</span></div>
+                    <div class="menu-item"><span class="item-name">Peinado Profesional: Semirecogidos</span><span class="item-price">S/. 50</span></div>
+                    <div class="menu-item"><span class="item-name">Peinado Profesional: Ondas (Hollywood)</span><span class="item-price">S/. 60</span></div>
+                    <div class="menu-item"><span class="item-name">Peinado Profesional: Trenzados</span><span class="item-price">S/. 50</span></div>
+                    <div class="menu-item"><span class="item-name">Peinado para Novias y Eventos Especiales</span><span class="item-price">S/. 80</span></div>
+                </div>
+            </div>
+
+            <div class="services-row">
+                <div class="service-category">
+                    <h3>3. Tratamientos Capilares</h3>
+                    <div class="menu-item"><span class="item-name">Tratamiento Ultimate Repair</span><span class="item-price">S/. 80</span></div>
+                    <div class="menu-item"><span class="item-name">Reparación Intensa (Fusión Amino Filler)</span><span class="item-price">S/. 80</span></div>
+                    <div class="menu-item"><span class="item-name">Nutrición Intensiva</span><span class="item-price">S/. 80</span></div>
+                    <div class="menu-item"><span class="item-name">Células Madre</span><span class="item-price">S/. 60</span></div>
+                    <div class="menu-item"><span class="item-name">Botox Capilar</span><span class="item-price">S/. 100</span></div>
+                    <div class="menu-item"><span class="item-name">Peeling Capilar</span><span class="item-price">S/. 50</span></div>
+                    <div class="menu-item"><span class="item-name">Anti-Frizz (Ultima Smooth)</span><span class="item-price">S/. 80</span></div>
+                    <div class="menu-item"><span class="item-name">Tratamiento Curly (Especial para Rizos)</span><span class="item-price">S/. 60</span></div>
+                </div>
+
+                <div class="service-category">
+                    <h3>4. Alisados</h3>
+                    <div class="menu-item"><span class="item-name">Alisado Vegano + Hidratación <span>Cabello Corto</span></span><span class="item-price">S/. 200</span></div>
+                    <div class="menu-item"><span class="item-name">Alisado Vegano + Hidratación <span>Cabello Mediano</span></span><span class="item-price">S/. 280</span></div>
+                    <div class="menu-item"><span class="item-name">Alisado Vegano + Hidratación <span>Cabello Largo</span></span><span class="item-price">S/. 350</span></div>
+                    <div class="menu-item"><span class="item-name">Alisado K3 + Botox <span>Cabello Corto</span></span><span class="item-price">S/. 200</span></div>
+                    <div class="menu-item"><span class="item-name">Alisado K3 + Botox <span>Cabello Mediano</span></span><span class="item-price">S/. 280</span></div>
+                    <div class="menu-item"><span class="item-name">Alisado K3 + Botox <span>Cabello Largo</span></span><span class="item-price">S/. 350</span></div>
+                </div>
+            </div>
+
+            <div class="services-row">
+                <div class="service-category">
+                    <h3>5. Extensiones de Cabello</h3>
+                    <div class="menu-item"><span class="item-name">Colocación por Punto <span>Nanoring + Creatina Italiana</span></span><span class="item-price">S/. 2.00 <small>x punto</small></span></div>
+                    <div class="menu-item"><span class="item-name">Aplicación de Cortinas Cosidas</span><span class="item-price">S/. 15 <small>c/u</small></span></div>
+                    <div class="menu-item"><span class="item-name">Mantenimiento de Extensiones</span><span class="item-price">S/. 60</span></div>
+                </div>
+
+                <div class="service-category">
+                    <h3>6. Cejas, Pestañas & Depilación Facial</h3>
+                    <div class="menu-item"><span class="item-name">Lifting de Pestañas</span><span class="item-price">S/. 40</span></div>
+                    <div class="menu-item"><span class="item-name">Laminado de Cejas + Depilación</span><span class="item-price">S/. 30</span></div>
+                    <div class="menu-item"><span class="item-name">Laminado de Cejas + Depilación + Pigmentación</span><span class="item-price">S/. 40</span></div>
+                    <div class="menu-item"><span class="item-name">Visajismo + Depilación de Cejas con Hilo</span><span class="item-price">S/. 20</span></div>
+                    <div class="menu-item"><span class="item-name">Visajismo + Depilación de Cejas con Cera</span><span class="item-price">S/. 25</span></div>
+                    <div class="menu-item"><span class="item-name">Depilación del Rostro Completo con Cera</span><span class="item-price">S/. 35</span></div>
+                    <div class="menu-item"><span class="item-name">Depilación del Rostro Completo con Hilo Hindú</span><span class="item-price">S/. 25</span></div>
+                </div>
+            </div>
+
+            <div class="services-row">
+                <div class="service-category">
+                    <h3>7. Extensiones de Pestañas</h3>
+                    <div class="menu-item"><span class="item-name">Extensiones de Pestañas: Clásicas</span><span class="item-price">S/. 80</span></div>
+                    <div class="menu-item"><span class="item-name">Extensiones de Pestañas: Híbridas</span><span class="item-price">S/. 80</span></div>
+                    <div class="menu-item"><span class="item-name">Extensiones de Pestañas: Volumen</span><span class="item-price">S/. 80</span></div>
+                </div>
+
+                <div class="service-category">
+                    <h3>8. Micropigmentación (Maquillaje Permanente)</h3>
+                    <div class="menu-item"><span class="item-name">Micropigmentación de Cejas: Powder Brows <span>Efecto sombreado</span></span><span class="item-price">S/. 150</span></div>
+                    <div class="menu-item"><span class="item-name">Micropigmentación de Cejas: Ombré Brows</span><span class="item-price">S/. 150</span></div>
+                    <div class="menu-item"><span class="item-name">Micropigmentación de Cejas: Full Machine</span><span class="item-price">S/. 150</span></div>
+                    <div class="menu-item"><span class="item-name">Micropigmentación de Labios: Neutralización <span>Para labios oscuros</span></span><span class="item-price">S/. 150</span></div>
+                    <div class="menu-item"><span class="item-name">Micropigmentación de Labios: Full Lips</span><span class="item-price">S/. 150</span></div>
+                    <div class="menu-item"><span class="item-name">Micropigmentación de Labios: Baby Lips</span><span class="item-price">S/. 150</span></div>
+                </div>
+            </div>
+
+            <div class="services-row">
+                <div class="service-category">
+                    <h3>9. Maquillaje Profesional</h3>
+                    <div class="menu-item"><span class="item-name">Maquillaje Social Profesional</span><span class="item-price">S/. 80</span></div>
+                    <div class="menu-item"><span class="item-name">Maquillaje de Quinceañera (Paquete 1)</span><span class="item-price">S/. 100</span></div>
+                    <div class="menu-item"><span class="item-name">Maquillaje de Quinceañera (Paquete 2)</span><span class="item-price">S/. 150</span></div>
+                    <div class="menu-item"><span class="item-name">Maquillaje de Novia: Básico</span><span class="item-price">S/. 150</span></div>
+                    <div class="menu-item"><span class="item-name">Maquillaje de Novia: Avanzado</span><span class="item-price">S/. 250</span></div>
+                    <div class="menu-item"><span class="item-name">Maquillaje de Novia: Premium <span>Blindaje a prueba de agua</span></span><span class="item-price">S/. 350</span></div>
+                </div>
+
+                <div class="service-category">
+                    <h3>10. Bienestar, Manicure & Pedicure</h3>
+                    <div class="menu-item"><span class="item-name">Limpieza Facial con Dermoabrasión</span><span class="item-price">S/. 50</span></div>
+                    <div class="menu-item"><span class="item-name">Manicure Spa</span><span class="item-price">S/. 50</span></div>
+                    <div class="menu-item"><span class="item-name">Manicure Rusa + Hidratación de Parafina</span><span class="item-price">S/. 60</span></div>
+                    <div class="menu-item"><span class="item-name">Pedicure Rusa + Hilo</span><span class="item-price">S/. 60</span></div>
+                    <div class="menu-item"><span class="item-name">Pedicure Rusa + Hilo + Parafina</span><span class="item-price">S/. 80</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="ciencia" class="science-section reveal">
+        <div class="container">
+            <h2 class="section-title text-center">Ciencia y Nutrición Capilar</h2>
+            <p class="subtitle text-center">El secreto de un cabello radiante</p>
+            
+            <div class="science-intro">
+                En Rosa Anaya Rivera - Beauty Studio, creemos que un cabello hermoso comienza con un cabello sano. Por ello, no solo transformamos tu estilo, sino que restauramos la fibra capilar desde el interior utilizando tecnología de vanguardia, fórmulas orgánicas y activos de alta pureza. Descubre los componentes y la ciencia detrás de nuestros tratamientos estrella:
+            </div>
+
+            <div class="science-group-title">Terapias de Reparación y Nutrición Avanzada</div>
+            <p style="margin-bottom: 20px; color: var(--text-muted); font-style: italic;">Ideales para cabellos expuestos a procesos químicos, opacos o debilitados. Redescubre la elasticidad y el brillo natural.</p>
+
+            <div class="science-box-container">
+                <div class="science-box-row">
+                    <div class="science-card">
+                        <span class="science-tag">Reparación en 90 Segundos</span>
+                        <h4>Tratamiento Ultimate Repair</h4>
+                        <p><strong>¿De qué se compone?</strong> Una fórmula tecnológica avanzada con Alfa-hidroxiácidos (AHA) y Omega-9.</p>
+                        <p><strong>¿Cómo actúa?</strong> Transforma el cabello volviéndolo completamente saludable por dentro y por fuera. Los Alfa-hidroxiácidos penetran a nivel molecular para reconstruir los enlaces rotos en la corteza profunda, mientras que los Omega-9 recubren la superficie exterior, rellenando la cutícula y restaurando por completo la barrera protectora del cabello. ¿El resultado? Un cabello 10 veces más suave y visiblemente renovado.</p>
+                    </div>
+                    <div class="science-card">
+                        <span class="science-tag">-95% de quiebre</span>
+                        <h4>Tratamiento de Reparación Intensa Fusion</h4>
+                        <p><strong>¿De qué se compone?</strong> Desarrollado con la exclusiva tecnología Silksteel, que fusiona aminoácidos de seda, lípidos micronizados y el sistema Metal Purifier™.</p>
+                        <p><strong>¿Cómo actúa?</strong> Es la terapia de rescate ideal para cabellos con daños químicos severos o castigados por el uso excesivo de planchas y secadoras. Repara profundamente la fibra dañada y la blinda por completo, logrando disminuir el quiebre del cabello hasta en un 95%.</p>
+                    </div>
+                </div>
+                <div class="science-box-row">
+                    <div class="science-card">
+                        <span class="science-tag">Protección Antioxidante</span>
+                        <h4>Tratamiento de Nutrición Intensiva con Indigo Enrich</h4>
+                        <p><strong>¿De qué se compone?</strong> Un concentrado vitalizante rico en Ácido Oleico, Pantenol, Vitamina E y extracto de Baya de Goji (reconocida por su alto contenido de vitaminas, minerales y péptidos).</p>
+                        <p><strong>¿Cómo actúa?</strong> Está diseñado específicamente para nutrir, suavizar y devolverle la vida al cabello estresado y opaco. El ácido oleico y el pantenol aportan una hidratación profunda desde el interior, mientras que la vitamina E y la baya de goji actúan como un escudo antioxidante que protege las hebras del estrés ambiental, llenando tu melena de una vitalidad increíble.</p>
+                    </div>
+                    <div class="science-card">
+                        <span class="science-tag">30 segundos de acción</span>
+                        <h4>Tratamiento Antifrizz Ultimate Smooth</h4>
+                        <p><strong>¿De qué se compone?</strong> Nuestra más reciente tecnología patentada que combina Escualeno y Omega-9.</p>
+                        <p><strong>¿Cómo actúa?</strong> El aliado definitivo para cabellos crespos, rebeldes, con frizz o signos de daño. Esta fórmula de reparación ultra rápida en solo 30 segundos controla el encrespamiento de manera inmediata. Nutre la hebra desde el interior para dejar el cabello con un aspecto completamente sano, disciplinado, sedoso y con un brillo espectacular en el exterior.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="science-box-container">
+                <div class="science-box-row">
+                    <div class="science-card">
+                        <span class="science-tag">Escudo Antienvejecimiento</span>
+                        <h4>Terapia de Células Madre</h4>
+                        <p><strong>¿De qué se compone?</strong> Extractos purificados de células madre de origen vegetal combinados con un potente cóctel de antioxidantes.</p>
+                        <p><strong>¿Cómo actúa?</strong> Estimula la regeneración capilar acelerando la renovación celular de la hebra. Funciona como un escudo antienvejecimiento que duplica la resistencia del cabello, aportando una suavidad extrema y un brillo espejo sin alterar su forma natural.</p>
+                    </div>
+                    <div class="science-card">
+                        <span class="science-tag">Brillo espejo</span>
+                        <h4>Botox Organic</h4>
+                        <p><strong>¿De qué se compone?</strong> Una fórmula avanzada y orgánica 100% libre de químicos agresivos, basada principalmente en Ácido Ascórbico (Vitamina C), un poderoso antioxidante natural.</p>
+                        <p><strong>¿Cómo actúa?</strong> Este tratamiento actúa como un escudo rejuvenecedor que evita el envejecimiento celular y repara profundamente toda la superficie de la fibra capilar. Restaura la masa proteica perdida y elimina por completo la porosidad sellando profundamente la cutícula. Consigue reducir el frizz de forma inmediata y repara las puntas abiertas sin alterar la estructura natural del cabello. ¿El resultado? Una melena con suavidad extrema y un brillo intensificado al máximo.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="science-group-title">Tratamientos Especializados y Alisados</div>
+            <div class="science-box-container">
+                <div class="science-box-row">
+                    <div class="science-card">
+                        <span class="science-tag">Purificación profunda</span>
+                        <h4>Peeling Capilar</h4>
+                        <p>Formulado con microexfoliantes frutales y agentes purificantes que limpian profundamente el cuero cabelludo, eliminando residuos de productos, grasa y células muertas para permitir que el cabello crezca con más fuerza.</p>
+                    </div>
+                    <div class="science-card">
+                        <span class="science-tag">Método Curvaturas</span>
+                        <h4>Tratamiento Curly</h4>
+                        <p>Libre de sulfatos y siliconas pesadas. Compuesto por mantecas nutritivas y aceites esenciales que definen el rizo, retienen la humedad natural y eliminan el frizz sin restar volumen.</p>
+                    </div>
+                </div>
+                <div class="science-box-row">
+                    <div class="science-card">
+                        <span class="science-tag">Duración 6 a 8 meses</span>
+                        <h4>Alisado Vegano + Hidratación</h4>
+                        <p><strong>¿De qué se compone?</strong> Una fórmula 100% libre de formol y derivados agresivos, basada en ácidos orgánicos (como el ácido glioxílico), proteínas vegetales y aceites amazónicos altamente nutritivos.</p>
+                        <p><strong>¿Cómo actúa?</strong> Relaja de forma segura los puentes de hidrógeno del cabello para alisar la estructura de manera progresiva y natural. Al estar enriquecido con un shot de hidratación, el cabello no sufre deshidratación térmica, quedando sedoso, con movimiento natural y un brillo extraordinario. Puede utilizarse en embarazadas, niñas y lactantes. Brinda un efecto lacio impecable y blindado.</p>
+                    </div>
+                    <div class="science-card">
+                        <span class="science-tag">Duración 4 a 5 meses</span>
+                        <h4>Alisado K3 + Botox Organic</h4>
+                        <p><strong>¿De qué se compone?</strong> Un sistema de tercera generación con una formulación premium mejorada, tres veces potenciada con Creatina en conjunto con Ácido Cítrico y los activos antioxidantes del Botox Organic.</p>
+                        <p><strong>¿Cómo actúa?</strong> Es la solución definitiva de alta tecnología apta para todo tipo de cabello. El ácido cítrico actúa facilitando una mayor adherencia de los nutrientes en la fibra capilar profunda, mientras que la triple dosis de creatina reconstruye estructuralmente la hebra. Este potente combo reduce notablemente el volumen y elimina el frizz por completo, logrando un liso perfecto, extremadamente brillante, suave y manejable.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="galeria" class="container reveal">
+        <h2 class="section-title text-center">Galería "Antes y Después"</h2>
+        <p class="subtitle text-center">En el rubro de la belleza, la decisión de compra es 100% visual. Resultados reales del salón.</p>
+        
+        <div class="gallery-grid">
+            <div class="gallery-row">
+                <div class="gallery-item">
+                    <img src="Galería Antes y Después/Mis mejores Balayages y Rubios.jpg" alt="Balayage">
+                    <div class="gallery-caption">Mis mejores Balayages y Rubios</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="Galería Antes y Después/Resultados reales Alisado K3 o Botox Organic.png" alt="Alisados">
+                    <div class="gallery-caption">Resultados reales Alisado K3 o Botox Organic</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="Galería Antes y Después/Diseños de cejas y pestañas.jpg" alt="Diseños de cejas y pestañas">
+                    <div class="gallery-caption">Diseños de cejas y pestañas</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="reviews-section reveal">
+        <div class="container">
+            <h2 class="section-title text-center">Experiencias Reales</h2>
+            <p class="subtitle text-center">Lo que dicen nuestras clientas del estudio</p>
+            
+            <div class="reviews-container">
+                <div class="reviews-row">
+                    <div class="review-card">
+                        <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                        <p>"¡Encantada con el resultado! Me realicé una coloración entera de cabello y el color quedó exactamente como lo quería: vibrante, parejo y con un brillo espectacular. Lo que más me sorprendió fue la suavidad con la que quedó mi cabello gracias a los protectores que utilizan durante el proceso. Definitivamente, el mejor studio de Puente Piedra."</p>
+                        <div class="review-author">Rosario V. — Coloración Global</div>
+                    </div>
+                    <div class="review-card">
+                        <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                        <p>"Mi cabello es otro desde que me hice el Alisado K3 combinado con el Botox. Tenía mucho frizz y volumen difícil de controlar, pero ahora está perfectamente lacio, súper manejable y brillante. Se nota muchísimo el efecto de la creatina y la nutrición en la hebra. ¡Una maravilla que dura meses!"</p>
+                        <div class="review-author">Karina T. — Alisado K3 + Botox Organic</div>
+                    </div>
+                    <div class="review-card">
+                        <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                        <p>"Buscaba una option saludable y natural para disciplinar mi cabello, y el Alisado Vegano con Hidratación fue la elección perfecta. No tiene ese olor fuerte de los alisados tradicionales y me dejó el cabello increíblemente sedoso, con un movimiento natural hermoso. Me dio total seguridad saber que es un tratamiento libre de químicos agresivos."</p>
+                        <div class="review-author">Janet A. — Alisado Vegano + Hidratación</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="productos" class="container reveal">
+        <h2 class="section-title text-center">Tienda Virtual</h2>
+        <p class="subtitle text-center">Catálogo de mantenimiento en casa. Pagos rápidos por Yape/Plin sin comisiones.</p>
+        
+        <div style="margin-bottom: 20px; font-weight:600; font-size:1.1rem; text-transform:uppercase; letter-spacing:1px; color:var(--accent-dark);">Línea Wella Invigo Nutri Enrich</div>
+        <div class="shop-container">
+            <div class="shop-row">
+                <div class="product-card">
+                    <div class="product-icon"><img src="Tienda Virtual/Invigo Nutri Enrich Shampoo.png" alt="Shampoo Wella Invigo Nutri Enrich 250ml para nutrición capilar"></div>
+                    <h4>Invigo Nutri Enrich Shampoo</h4>
+                    <div class="product-line">250 ml</div>
+                    <p class="product-desc">Limpieza profunda y nutrición esencial para hilos secos o estresados.</p>
+                    <div class="product-price">S/. 59</div>
+                    <a href="https://wa.me/51977549354?text=Hola,%20deseo%20comprar%20Wella%20Invigo%20Shampoo" target="_blank" class="btn" style="padding:10px 20px; font-size:0.75rem;">Pedir</a>
+                </div>
+                <div class="product-card">
+                    <div class="product-icon"><img src="Tienda Virtual/Invigo Nutri Enrich Conditioner.png" alt="Acondicionador Wella Invigo Nutri Enrich 200ml para cabello seco"></div>
+                    <h4>Invigo Nutri Enrich Conditioner</h4>
+                    <div class="product-line">200 ml</div>
+                    <p class="product-desc">Suavizado y acondicionamiento instantáneo que devuelve el movimiento.</p>
+                    <div class="product-price">S/. 59</div>
+                    <a href="https://wa.me/51977549354?text=Hola,%20deseo%20comprar%20Wella%20Invigo%20Conditioner" target="_blank" class="btn" style="padding:10px 20px; font-size:0.75rem;">Pedir</a>
+                </div>
+                <div class="product-card">
+                    <div class="product-icon"><img src="Tienda Virtual/Invigo Nutri Enrich Mascarilla.png" alt="Mascarilla capilar Wella Invigo Nutri Enrich 150ml tratamiento nutritivo"></div>
+                    <h4>Invigo Nutri Enrich Mascarilla</h4>
+                    <div class="product-line">150 ml</div>
+                    <p class="product-desc">Tratamiento profundo semanal para reponer la hidratación celular perdida.</p>
+                    <div class="product-price">S/. 59</div>
+                    <a href="https://wa.me/51977549354?text=Hola,%20deseo%20comprar%20Wella%20Invigo%20Mascarilla" target="_blank" class="btn" style="padding:10px 20px; font-size:0.75rem;">Pedir</a>
+                </div>
+                <div class="product-card" style="background-color: var(--bg-light); border: 2px dashed var(--accent);">
+                    <div class="product-icon"><img src="Tienda Virtual/Kit Invigo Nutri Enrich.png" alt="Pack ahorro Wella Invigo Nutri Enrich con shampoo acondicionador y mascarilla"></div>
+                    <h4>Pack de 3 Productos Invigo</h4>
+                    <div class="product-line">Ahorro Especial</div>
+                    <p class="product-desc">Kit completo para un cuidado perfecto post tratamiento en casa.</p>
+                    <div class="product-price">S/. 149</div>
+                    <a href="https://wa.me/51977549354?text=Hola,%20deseo%20comprar%20el%20Pack%20Completo%20Wella%20Invigo" target="_blank" class="btn" style="padding:10px 20px; font-size:0.75rem;">Comprar Pack</a>
+                </div>
+            </div>
+        </div>
+
+        <div style="margin-bottom: 20px; font-weight:600; font-size:1.1rem; text-transform:uppercase; letter-spacing:1px; color:var(--accent-dark);">Línea Wella Fusion (Reparación Intensa)</div>
+        <div class="shop-container">
+            <div class="shop-row">
+                <div class="product-card">
+                    <div class="product-icon"><img src="Tienda Virtual/Wella Fusion Shampoo.png" alt="Shampoo reparador Wella Fusion 250ml para cabello dañado"></div>
+                    <h4>Wella Fusion Shampoo</h4>
+                    <div class="product-line">250 ml</div>
+                    <p class="product-desc">Limpia delicadamente ayudando a reparar el cabello dañado por procesos químicos.</p>
+                    <div class="product-price">S/. 69</div>
+                    <a href="https://wa.me/51977549354?text=Hola,%20deseo%20comprar%20Wella%20Fusion%20Shampoo" target="_blank" class="btn" style="padding:10px 20px; font-size:0.75rem;">Pedir</a>
+                </div>
+                <div class="product-card">
+                    <div class="product-icon"><img src="Tienda Virtual/Wella Fusion Conditioner.png" alt="Acondicionador reparador Wella Fusion 200ml protección contra rotura"></div>
+                    <h4>Wella Fusion Conditioner</h4>
+                    <div class="product-line">200 ml</div>
+                    <p class="product-desc">Acondicionador intensivo que protege contra la rotura mecánica por cepillado.</p>
+                    <div class="product-price">S/. 69</div>
+                    <a href="https://wa.me/51977549354?text=Hola,%20deseo%20comprar%20Wella%20Fusion%20Conditioner" target="_blank" class="btn" style="padding:10px 20px; font-size:0.75rem;">Pedir</a>
+                </div>
+                <div class="product-card">
+                    <div class="product-icon"><img src="Tienda Virtual/Wella Fusion Mask.png" alt="Mascarilla reparadora Wella Fusion 150ml con aminoácidos"></div>
+                    <h4>Wella Fusion Mask</h4>
+                    <div class="product-line">150 ml</div>
+                    <p class="product-desc">Mascarilla de lujo con aminoácidos que penetran hasta la corteza profunda.</p>
+                    <div class="product-price">S/. 69</div>
+                    <a href="https://wa.me/51977549354?text=Hola,%20deseo%20comprar%20Wella%20Fusion%20Mask" target="_blank" class="btn" style="padding:10px 20px; font-size:0.75rem;">Pedir</a>
+                </div>
+                <div class="product-card" style="background-color: var(--bg-light); border: 2px dashed var(--accent);">
+                    <div class="product-icon"><img src="Tienda Virtual/Kit Wella Fusion.png" alt="Pack ahorro Wella Fusion con shampoo acondicionador y mascarilla reparadora"></div>
+                    <h4>Pack de 3 Productos Fusion</h4>
+                    <div class="product-line">Ahorro Especial</div>
+                    <p class="product-desc">Blindaje supremo contra el quiebre y daño severo en casa.</p>
+                    <div class="product-price">S/. 169</div>
+                    <a href="https://wa.me/51977549354?text=Hola,%20deseo%20comprar%20el%20Pack%20Completo%20Wella%20Fusion" target="_blank" class="btn" style="padding:10px 20px; font-size:0.75rem;">Comprar Pack</a>
+                </div>
+            </div>
+        </div>
+
+        <div style="margin-bottom: 20px; font-weight:600; font-size:1.1rem; text-transform:uppercase; letter-spacing:1px; color:var(--accent-dark);">Línea Premium Wella SP Luxe Oil</div>
+        <div class="shop-container">
+            <div class="shop-row">
+                <div class="product-card">
+                    <div class="product-icon"><img src="Tienda Virtual/SP Luxe Oil Shampoo.png" alt="Shampoo premium Wella SP Luxe Oil 200ml con queratina"></div>
+                    <h4>SP Luxe Oil Shampoo</h4>
+                    <div class="product-line">200 ml</div>
+                    <p class="product-desc">Protección de queratina y nutrición premium sin sobrecargar la fibra capilar.</p>
+                    <div class="product-price">S/. 79</div>
+                    <a href="https://wa.me/51977549354?text=Hola,%20deseo%20comprar%20Wella%20SP%20Luxe%20Oil%20Shampoo" target="_blank" class="btn" style="padding:10px 20px; font-size:0.75rem;">Pedir</a>
+                </div>
+                <div class="product-card">
+                    <div class="product-icon"><img src="Tienda Virtual/SP Luxe Oil Mascarilla.png" alt="Mascarilla premium Wella SP Luxe Oil 150ml reconstrucción extrema"></div>
+                    <h4>SP Luxe Oil Mascarilla</h4>
+                    <div class="product-line">150 ml</div>
+                    <p class="product-desc">Reconstrucción extrema de la fibra que altera la textura positivamente de inmediato.</p>
+                    <div class="product-price">S/. 79</div>
+                    <a href="https://wa.me/51977549354?text=Hola,%20deseo%20comprar%20Wella%20SP%20Luxe%20Oil%20Mascarilla" target="_blank" class="btn" style="padding:10px 20px; font-size:0.75rem;">Pedir</a>
+                </div>
+                <div class="product-card">
+                    <div class="product-icon"><img src="Tienda Virtual/SP Luxe Oil Reconstructive.png" alt="Elixir reconstructivo Wella SP Luxe Oil 100ml brillo y suavidad"></div>
+                    <h4>SP Luxe Oil Reconstructive Elixir</h4>
+                    <div class="product-line">100 ml</div>
+                    <p class="product-desc">Elixir premium que transforma el cabello aportando suavidad y brillo eterno.</p>
+                    <div class="product-price">S/. 109</div>
+                    <a href="https://wa.me/51977549354?text=Hola,%20deseo%20comprar%20Wella%20SP%20Luxe%20Oil%20Elixir" target="_blank" class="btn" style="padding:10px 20px; font-size:0.75rem;">Pedir</a>
+                </div>
+                <div class="product-card" style="background-color: var(--bg-light); border: 2px dashed var(--accent);">
+                    <div class="product-icon"><img src="Tienda Virtual/Kit SP Luxe Oil.png" alt="Pack ahorro Wella SP Luxe Oil con shampoo mascarilla y elixir reconstructivo"></div>
+                    <h4>Pack de 3 Productos Luxe Oil</h4>
+                    <div class="product-line">Ahorro Supremo</div>
+                    <p class="product-desc">La experiencia de brillo espejo definitiva y máxima nutrición de aceites.</p>
+                    <div class="product-price">S/. 229</div>
+                    <a href="https://wa.me/51977549354?text=Hola,%20deseo%20comprar%20el%20Pack%20Completo%20Wella%20SP%20Luxe%20Oil" target="_blank" class="btn" style="padding:10px 20px; font-size:0.75rem;">Comprar Pack</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="reservar" class="container reveal">
+        <h2 class="section-title text-center">Módulo de Reservas (Pre-agenda)</h2>
+        <p class="subtitle text-center">Completa tus datos y coordina tu turno directamente con nuestro salón</p>
+        
+        <div class="booking-box">
+            <form id="salonBookingForm">
+                <div class="form-group">
+                    <label for="clientName">Nombre Completo</label>
+                    <input type="text" id="clientName" class="form-control" placeholder="Ej. Rosa Anaya" required>
+                </div>
+                <div class="form-group">
+                    <label for="chosenService">Servicio de Interés</label>
+                    <select id="chosenService" class="form-control" required>
+                        <option value="">Selecciona la especialidad...</option>
+                        <option value="Cabello y Colorimetría">1. Cabello & Colorimetría</option>
+                        <option value="Cortes y Peinados">2. Cortes & Peinados</option>
+                        <option value="Tratamientos Capilares Avanzados">3. Tratamientos Capilares</option>
+                        <option value="Alisados Tecnológicos">4. Alisados</option>
+                        <option value="Extensiones de Cabello">5. Extensiones de Cabello</option>
+                        <option value="Cejas, Pestañas y Depilación">6. Cejas, Pestañas & Depilación</option>
+                        <option value="Extensiones de Pestañas">7. Extensiones de Pestañas</option>
+                        <option value="Micropigmentación Maquillaje Permanente">8. Micropigmentación</option>
+                        <option value="Maquillaje Profesional">9. Maquillaje Profesional</option>
+                        <option value="Bienestar, Manicure y Pedicure">10. Bienestar, Manicure & Pedicure</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="bookingShift">Turno Deseado (Ver límites horarios abajo)</label>
+                    <select id="bookingShift" class="form-control" required>
+                        <option value="">Selecciona el bloque horario...</option>
+                        <option value="Mañana (10:00 AM / 12:00 AM)">Turno Mañana (10 AM / 12 AM)</option>
+                        <option value="Tarde (02:00 PM / 04:00 PM)">Turno Tarde (02 PM / 04 PM)</option>
+                        <option value="Noche (06:00 PM / 08:00 PM)">Turno Noche (06 PM / 08 PM)</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn" style="width: 100%; padding: 16px; font-weight:600;">Solicitar Reserva por WhatsApp</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="reveal">
+        <div class="container footer-container">
+            <div class="footer-col">
+                <h4>Contacto & Ubicación</h4>
+                <p><i class="fa-solid fa-location-dot"></i> Asoc. Cruz de Motupe, Puente Piedra 15117<br>Ref. Frente a la Capilla, Altura del Paradero Establo</p>
+                <p><i class="fa-solid fa-phone"></i> 977 549 354</p>
+                <a href="https://maps.app.goo.gl/Gx47WRUB4xNJ9DyVA" target="_blank" style="margin-top:15px; display:inline-block; text-decoration:underline; color:var(--bg-nude);"><i class="fa-solid fa-map-location-dot"></i> Ver en Google Maps</a>
+            </div>
+            <div class="footer-col">
+                <h4>Horarios de Atención</h4>
+                <p><strong>Lunes a Sábado:</strong><br>10:00 am a 09:00 pm</p>
+                <p><strong>Domingos:</strong><br>Previa cita obligatoria</p>
+                <p style="font-size:0.8rem; color:#8e8882; margin-top:10px; font-style:italic;">*Nota: Las citas agendadas por turnos deben ajustarse a los bloques establecidos en el formulario.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Síguenos</h4>
+                <a href="https://www.instagram.com/studio.rosaanaya.beauty?hl=es" target="_blank"><i class="fa-brands fa-instagram"></i> @studio.rosaanaya.beauty</a>
+                <a href="https://www.facebook.com/profile.php?id=61568787021909" target="_blank"><i class="fa-brands fa-facebook"></i> Rosa Anaya Rivera - Beauty Studio</a>
+            </div>
+            <div class="footer-col">
+                <h4>Políticas del Salón</h4>
+                <p><strong>Tolerancia:</strong><br>Contamos con una tolerancia máxima de 15 minutos para garantizar la calidad de tu servicio y la de la siguiente clienta.</p>
+                <p><strong>Cancelaciones:</strong><br>Si necesitas reprogramar tu turno, por favor avísanos con un mínimo de 24 horas de anticipación.</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 Rosa Anaya Rivera - Beauty Studio. Todos los derechos reservados. | Diseñado con los más altos estándares de estética profesional.
+        </div>
+    </footer>
+
+    <script>
+        history.scrollRestoration = 'manual';
+        window.scrollTo(0, 0);
+
+        document.getElementById('salonBookingForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            const nombre = document.getElementById('clientName').value;
+            const servicio = document.getElementById('chosenService').value;
+            const turno = document.getElementById('bookingShift').value;
+            
+            const numeroWhatsApp = "51977549354"; 
+            
+            // Mensaje perfectamente estructurado e impecable para la atención comercial
+            const textoMensaje = `Hola, quiero concretar una cita para *STUDIO ROSAANAYA BEAUTY*.\n\n` +
+                                 `*Cliente:* ${nombre}\n` +
+                                 `*Especialidad:* ${servicio}\n` +
+                                 `*Bloque Horario:* ${turno}`;
+            
+            const urlFinal = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(textoMensaje)}`;
+            
+            window.open(urlFinal, '_blank');
+        });
+
+        // Animaciones al hacer scroll con IntersectionObserver
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
